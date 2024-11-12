@@ -88,7 +88,7 @@ var event = new function(){
 		一問時間 = 5 * 1000;
 		
 		かけ算_第一項範囲 = [1, 9];
-		かけ算_第二項範囲 = [1, 5];
+		かけ算_第二項範囲 = [1, 6];
 		余り = false;
 		
 		event.countDown();
@@ -187,8 +187,20 @@ var event = new function(){
 		
 		var num1 = answer * num2;
 		
+		var amari = 0;
+		if(余り) {
+			amari = Math.floor(Math.random() * num2 );
+			num1 += amari;
+		}
+		
 		$('#game-text').html(num1 + " ÷ " + num2);
-		$('#answer').html(answer);
+		
+		if(amari == 0) {
+			$('#answer').html(answer);
+		} else {
+			$('#answer').html(answer + " … " + amari);
+		}
+		
 	};
 	
 	

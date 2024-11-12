@@ -53,8 +53,8 @@ var event = new function(){
 	var 何問目 = 0;
 	var 一歩距離 = 0;
 	
-	var かけ算_第一項範囲;
-	var かけ算_第二項範囲;
+	var わり算_第一項範囲;
+	var わり算_第二項範囲;
 	var 余り;
 	
 	var カービ移動回数 = 0;
@@ -87,8 +87,8 @@ var event = new function(){
 		event.startMusic();
 		一問時間 = 5 * 1000;
 		
-		かけ算_第一項範囲 = [1, 9];
-		かけ算_第二項範囲 = [1, 6];
+		わり算_第一項範囲 = [1, 9];
+		わり算_第二項範囲 = [1, 6];
 		余り = false;
 		
 		event.countDown();
@@ -101,8 +101,8 @@ var event = new function(){
 		event.startMusic();
 		一問時間 = 7 * 1000;
 		
-		かけ算_第一項範囲 = [2, 9];
-		かけ算_第二項範囲 = [2, 9];
+		わり算_第一項範囲 = [2, 9];
+		わり算_第二項範囲 = [2, 9];
 		余り = false;
 		
 		event.countDown();
@@ -115,8 +115,8 @@ var event = new function(){
 		event.startMusic();
 		一問時間 = 10 * 1000;
 		
-		かけ算_第一項範囲 = [2, 9];
-		かけ算_第二項範囲 = [2, 9];
+		わり算_第一項範囲 = [2, 9];
+		わり算_第二項範囲 = [2, 9];
 		余り = true;
 		
 		event.countDown();
@@ -129,8 +129,8 @@ var event = new function(){
 		event.startMusic();
 		一問時間 = 3 * 1000;
 		
-		かけ算_第一項範囲 = [2, 15];
-		かけ算_第二項範囲 = [2, 9];
+		わり算_第一項範囲 = [2, 15];
+		わり算_第二項範囲 = [2, 9];
 		余り = true;
 		event.countDown();
 	};
@@ -182,8 +182,8 @@ var event = new function(){
 
 		何問目++;
 		
-		var num2 = Math.floor(Math.random() * (かけ算_第一項範囲[1] - かけ算_第一項範囲[0])) + かけ算_第一項範囲[0];
-		var answer = Math.floor(Math.random() * (かけ算_第二項範囲[1] - かけ算_第二項範囲[0])) + かけ算_第二項範囲[0];
+		var num2 = Math.floor(Math.random() * (わり算_第一項範囲[1] - わり算_第一項範囲[0])) + わり算_第一項範囲[0];
+		var answer = Math.floor(Math.random() * (わり算_第二項範囲[1] - わり算_第二項範囲[0])) + わり算_第二項範囲[0];
 		
 		var num1 = answer * num2;
 		

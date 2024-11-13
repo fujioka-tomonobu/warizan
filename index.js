@@ -223,20 +223,6 @@ var event = new function(){
 			
 			// カービゴール
 			if(何問目 >= 問題数) {
-				
-				// 時間計算
-				var 終了時間 = new Date();
-				var TimeDefference = 終了時間.getTime() - 開始時間.getTime()
-
-				var Hour = TimeDefference / (1000 * 60 * 60);    
-				//「時間」の部分を「Hour」に代入
-				var Minute = (Hour - Math.floor(Hour)) * 60;
-				//「分」の部分をMinuteに代入
-				var Second = (Minute - Math.floor(Minute)) * 60;
-				//TimeDefference = (('00' + Math.floor(Hour)).slice(-2) + ':' + ('00' + Math.floor(Minute)).slice(-2) + ':' + ('00' + Math.floor(Second)).slice(-2));
-				TimeDefference = (('00' + Math.floor(Minute)).slice(-2) + ':' + ('00' + Math.floor(Second)).slice(-2));
-				
-				$('.time').html(TimeDefference);
 
 				clearInterval(dededeAnimeId);
 				
@@ -291,6 +277,7 @@ var event = new function(){
 	 */
 	this.win = function(){
 		event.stopMusic();
+		event.showTime();
 		var audio = $('#audio-win').get(0);
 		audio.play();
 		$('#game').hide();
@@ -302,6 +289,7 @@ var event = new function(){
 	 */
 	this.lose = function(){
 		event.stopMusic();
+		event.showTime();
 		var audio = $('#audio-lose').get(0);
 		audio.play();
 		$('#game').hide();
@@ -316,5 +304,24 @@ var event = new function(){
 		$('#win').hide();
 		$('#lose').hide();
 		$('#index').show();
+	};
+	
+	/**
+	 * 時間表示
+	 */
+	this.showTime = function(){
+		// 時間計算
+		var 終了時間 = new Date();
+		var TimeDefference = 終了時間.getTime() - 開始時間.getTime()
+
+		var Hour = TimeDefference / (1000 * 60 * 60);    
+		//「時間」の部分を「Hour」に代入
+		var Minute = (Hour - Math.floor(Hour)) * 60;
+		//「分」の部分をMinuteに代入
+		var Second = (Minute - Math.floor(Minute)) * 60;
+		//TimeDefference = (('00' + Math.floor(Hour)).slice(-2) + ':' + ('00' + Math.floor(Minute)).slice(-2) + ':' + ('00' + Math.floor(Second)).slice(-2));
+		TimeDefference = (('00' + Math.floor(Minute)).slice(-2) + ':' + ('00' + Math.floor(Second)).slice(-2));
+		
+		$('.time').html(TimeDefference);
 	};
 };

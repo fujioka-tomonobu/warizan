@@ -276,6 +276,7 @@ var event = new function(){
 	 * かち
 	 */
 	this.win = function(){
+		clearInterval(dededeAnimeId);
 		event.stopMusic();
 		event.showTime();
 		var audio = $('#audio-win').get(0);
@@ -288,6 +289,7 @@ var event = new function(){
 	 * まけ
 	 */
 	this.lose = function(){
+		clearInterval(dededeAnimeId);
 		event.stopMusic();
 		event.showTime();
 		var audio = $('#audio-lose').get(0);

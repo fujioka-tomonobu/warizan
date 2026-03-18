@@ -183,8 +183,8 @@ var event = new function(){
 
 		何問目++;
 		
-		var num2 = Math.floor(Math.random() * (わり算_第一項範囲[1] - わり算_第一項範囲[0])) + わり算_第一項範囲[0];
-		var answer = Math.floor(Math.random() * (わり算_第二項範囲[1] - わり算_第二項範囲[0])) + わり算_第二項範囲[0];
+		var num2 = Math.floor(Math.random() * (わり算_第一項範囲[1] - わり算_第一項範囲[0]) + 1) + わり算_第一項範囲[0];
+		var answer = Math.floor(Math.random() * (わり算_第二項範囲[1] - わり算_第二項範囲[0]) + 1) + わり算_第二項範囲[0];
 		
 		var num1 = answer * num2;
 		

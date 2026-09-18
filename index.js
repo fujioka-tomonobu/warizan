@@ -196,7 +196,7 @@ var event = new function(){
 		
 		if(問題３桁) {
 			if(num1 < 100) {
-				var 係数 = Math.floor(Math.random() * 10);
+				var 係数 = Math.floor(Math.random() * 10) + 1;
 				num1 = num1 * 係数;
 				answer = num1 / num2;
 			}

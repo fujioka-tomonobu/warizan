@@ -116,7 +116,7 @@ var event = new function(){
 	 */
 	this.hard = function(){
 		event.startMusic();
-		一問時間 = 7 * 1000;
+		一問時間 = 10 * 1000;
 		
 		わり算_割る数範囲 = [2, 9];
 		わり算_答え範囲 = [2, 9];
@@ -131,7 +131,7 @@ var event = new function(){
 	 */
 	this.veryhard = function(){
 		event.startMusic();
-		一問時間 = 5 * 1000;
+		一問時間 = 10 * 1000;
 		
 		わり算_割る数範囲 = [2, 9];
 		わり算_答え範囲 = [2, 9];

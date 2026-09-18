@@ -53,9 +53,10 @@ var event = new function(){
 	var 何問目 = 0;
 	var 一歩距離 = 0;
 	
-	var わり算_第一項範囲;
-	var わり算_第二項範囲;
+	var わり算_割る数範囲;
+	var わり算_答え範囲;
 	var 余り;
+	var 問題３桁;
 	
 	var カービ移動回数 = 0;
 	var デデデ移動回数 = 0;
@@ -87,9 +88,10 @@ var event = new function(){
 		event.startMusic();
 		一問時間 = 5 * 1000;
 		
-		わり算_第一項範囲 = [1, 9];
-		わり算_第二項範囲 = [1, 9];
+		わり算_割る数範囲 = [1, 9];
+		わり算_答え範囲 = [1, 9];
 		余り = false;
+		問題３桁 = false;
 		
 		event.countDown();
 	};
@@ -101,9 +103,10 @@ var event = new function(){
 		event.startMusic();
 		一問時間 = 7 * 1000;
 		
-		わり算_第一項範囲 = [2, 9];
-		わり算_第二項範囲 = [2, 9];
+		わり算_割る数範囲 = [2, 9];
+		わり算_答え範囲 = [2, 9];
 		余り = false;
+		問題３桁 = false;
 		
 		event.countDown();
 	};
@@ -115,9 +118,10 @@ var event = new function(){
 		event.startMusic();
 		一問時間 = 7 * 1000;
 		
-		わり算_第一項範囲 = [2, 9];
-		わり算_第二項範囲 = [2, 9];
-		余り = true;
+		わり算_割る数範囲 = [2, 9];
+		わり算_答え範囲 = [2, 9];
+		余り = false;
+		問題３桁 = true;
 		
 		event.countDown();
 	};
@@ -129,9 +133,11 @@ var event = new function(){
 		event.startMusic();
 		一問時間 = 5 * 1000;
 		
-		わり算_第一項範囲 = [2, 15];
-		わり算_第二項範囲 = [2, 9];
+		わり算_割る数範囲 = [2, 9];
+		わり算_答え範囲 = [2, 9];
 		余り = true;
+		問題３桁 = true;
+		
 		event.countDown();
 	};
 	
@@ -183,10 +189,18 @@ var event = new function(){
 
 		何問目++;
 		
-		var num2 = Math.floor(Math.random() * (わり算_第一項範囲[1] - わり算_第一項範囲[0]) + 1) + わり算_第一項範囲[0];
-		var answer = Math.floor(Math.random() * (わり算_第二項範囲[1] - わり算_第二項範囲[0]) + 1) + わり算_第二項範囲[0];
+		var num2 = Math.floor(Math.random() * (わり算_割る数範囲[1] - わり算_割る数範囲[0]) + 1) + わり算_割る数範囲[0];
+		var answer = Math.floor(Math.random() * (わり算_答え範囲[1] - わり算_答え範囲[0]) + 1) + わり算_答え範囲[0];
 		
 		var num1 = answer * num2;
+		
+		if(問題３桁) {
+			if(num1 < 100) {
+				var 係数 = Math.floor(Math.random() * 10);
+				num1 = num1 * 係数;
+				answer = num1 / num2;
+			}
+		}
 		
 		var amari = 0;
 		if(余り) {
